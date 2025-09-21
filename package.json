@@ -1,0 +1,27 @@
+{
+  "name": "ai-transcribe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "start": "node --env-file=.env index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pratikyoff/ai-transcribe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/pratikyoff/ai-transcribe/issues"
+  },
+  "homepage": "https://github.com/pratikyoff/ai-transcribe#readme",
+  "dependencies": {
+    "openai": "^5.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.4"
+  }
+}
