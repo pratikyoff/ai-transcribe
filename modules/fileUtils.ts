@@ -1,7 +1,7 @@
 import fs from 'fs'
 import { execSync } from 'child_process'
 
-export function getLatestAudioFile(directory: string): string {
+const getLatestAudioFile = (directory: string): string => {
     const inputFiles = fs.readdirSync(directory).filter(file => file.endsWith('.webm'))
     if (inputFiles.length === 0) {
         throw new Error('No audio files found in the inputFiles directory.')
@@ -10,17 +10,25 @@ export function getLatestAudioFile(directory: string): string {
     return inputFiles[0].replace('.webm', '')
 }
 
-export function compressAudioFile(inputPath: string, outputPath: string): void {
-    console.log(`Compressing audio file...`)
+const compressAudioFile = (params: { inputPath: string; outputPath: string }): void => {
+    const { inputPath, outputPath } = params
+    console.log('Compressing audio file...')
     console.time('Audio Compression')
     execSync(`ffmpeg -i ${inputPath} -c:a libopus -b:a 64k ${outputPath}`)
     console.timeEnd('Audio Compression')
 }
 
-export function readFileContent(filePath: string): string {
-    return fs.readFileSync(filePath, 'utf8')
-}
+const readFileContent = (filePath: string): string => fs.readFileSync(filePath, 'utf8')
 
-export function writeFileContent(filePath: string, content: string): void {
+const writeFileContent = (params: { filePath: string; content: string }): void => {
+    const { filePath, content } = params
     fs.writeFileSync(filePath, content, 'utf8')
 }
+
+const ensureDirectoryExists = (directoryPath: string): void => {
+    if (!fs.existsSync(directoryPath)) {
+        fs.mkdirSync(directoryPath, { recursive: true })
+    }
+}
+
+export { getLatestAudioFile, compressAudioFile, readFileContent, writeFileContent, ensureDirectoryExists }
