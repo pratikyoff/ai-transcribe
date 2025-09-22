@@ -12,11 +12,10 @@ AI Transcribe is a Node.js application designed to process audio files, transcri
 
 ## Installation
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/pratikyoff/ai-transcribe.git
-   cd ai-transcribe
-   ```
+1. **Install FFmpeg**:
+   - macOS: `brew install ffmpeg`
+   - Ubuntu/Debian: `sudo apt-get install ffmpeg`
+   - Windows: Download from the [official FFmpeg website](https://ffmpeg.org/download.html) and follow the installation instructions.
 
 2. **Install dependencies**:
    ```bash
@@ -48,20 +47,3 @@ AI Transcribe is a Node.js application designed to process audio files, transcri
 
 - **Node Version**: Ensure you are using Node.js version 24.8.0 or higher.
 - **Environment Variables**: The application requires an OpenAI API key, which should be stored in a `.env` file.
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request on GitHub.
-
-## License
-
-This project is licensed under the ISC License.
-
-## Contact
-
-For any questions or issues, please open an issue on the [GitHub repository](https://github.com/pratikyoff/ai-transcribe/issues).
-
-## Acknowledgments
-
-- This project uses the [OpenAI API](https://openai.com/api/) for transcription and summary generation.
-- Special thanks to the developers and contributors of the libraries and tools used in this project.
