@@ -61,6 +61,7 @@ A concise summary of the entire meeting (50 words max), including brief mentions
 
 ## Topics:
 Clearly organize all relevant information discussed in the meeting by topic, rather than by participant. Include all information here except personal information.
+Try to not repeat action points here.
 
 Example format:
 1. Topic 1
